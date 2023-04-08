@@ -21,6 +21,12 @@ body {
     text-align: center;
 }
 
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
 .content {
     background-color: rgba(10, 10, 10, 0.6);
     padding: 2rem;
