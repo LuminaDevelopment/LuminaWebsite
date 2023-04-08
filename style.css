@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     background-image: url('https://imgur.com/TDK9nDD.png');
@@ -22,7 +21,7 @@ body {
 }
 
 .content {
-    background-color: rgba(10, 10, 10, 0.6);
+    background-color: rgba(128, 128, 128, 0.3);
     padding: 2rem;
     border-radius: 15px;
 }
@@ -30,8 +29,8 @@ body {
 .title {
     font-size: 4rem;
     color: white;
-    text-shadow: 0 0 50px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
-    animation: float 3s ease-in-out infinite;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
+    animation: float 6s ease-in-out infinite;
 }
 
 .description {
@@ -69,24 +68,5 @@ body {
 
 @keyframes float {
     0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
+        transform: translate(0, 0
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
