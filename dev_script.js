@@ -68,7 +68,7 @@ function randomColor() {
 
 function createBalls() {
   const balls = [];
-  for (let i = 0; i < 150; i++) {
+  for (let i = 0; i < 60; i++) {
     const radius = 10 + Math.random() * 10;
     const x = radius + Math.random() * (window.innerWidth - 2 * radius);
     const y = radius + Math.random() * (window.innerHeight - 2 * radius);
@@ -89,8 +89,11 @@ function animate(canvas, ctx, balls) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const developerImage = document.getElementById("developer-image");
-  developerImage.style.backgroundImage = "url('https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/PfpTest1(1).jpg')";
+  const stormcphImage = document.getElementById("stormcph-image");
+  stormcphImage.src = "https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/PfpTest1(1).jpg";
+
+  const qweruImage = document.getElementById("qweru-image");
+  qweruImage.src = "https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/qwery.jpg"; // Replace with the URL of qweru's profile picture
 
   const canvas = document.getElementById("floating-balls");
   const ctx = canvas.getContext("2d");
