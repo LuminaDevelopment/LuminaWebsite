@@ -1,3 +1,4 @@
+
 class Ball {
   constructor(x, y, radius, color, dx, dy) {
     this.x = x;
@@ -122,9 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function animate(canvas, ctx, balls, cursor) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   balls.forEach(ball => {
-    ball.applyForce(cursor.x, cursor.y, 300);
+    ball.applyForce(cursor.x, cursor.y, 400);
     ball.update(ctx, canvas);
   });
   requestAnimationFrame(() => animate(canvas, ctx, balls, cursor));
 }
-
