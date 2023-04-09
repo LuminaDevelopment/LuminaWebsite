@@ -68,7 +68,7 @@ function randomColor() {
 
 function createBalls() {
   const balls = [];
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 200; i++) {
     const radius = 10 + Math.random() * 10;
     const x = radius + Math.random() * (window.innerWidth - 2 * radius);
     const y = radius + Math.random() * (window.innerHeight - 2 * radius);
