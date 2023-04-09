@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   qweruImage.src = "https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/qwery.jpg";
   
   const corruptionImage = document.getElementById("CorruptionHades-image");
-  corruptionImage.src = "https://avatars.githubusercontent.com/u/96599430?v=4";
+  corruptionImage.src = "https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/CorruptionHades.jpg";
 
   const canvas = document.getElementById("floating-balls");
   const ctx = canvas.getContext("2d");
