@@ -1,8 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const developerImage = document.getElementById("developer-image");
-  developerImage.style.backgroundImage = "url('stormcph.jpg')";
-});
-
 class Ball {
   constructor(x, y, radius, color, dx, dy) {
     this.x = x;
@@ -13,7 +8,7 @@ class Ball {
     this.dy = dy;
   }
   
-    applyForce(cursorX, cursorY, forceRadius) {
+  applyForce(cursorX, cursorY, forceRadius) {
     const distance = Math.hypot(cursorX - this.x, cursorY - this.y);
 
     if (distance < forceRadius) {
@@ -23,6 +18,15 @@ class Ball {
 
       this.dx += forceStrength * forceDirectionX;
       this.dy += forceStrength * forceDirectionY;
+    } else {
+      // Apply friction when the balls are moving at high speeds
+      const speed = Math.hypot(this.dx, this.dy);
+      const maxSpeed = 8;
+
+      if (speed > maxSpeed) {
+        this.dx *= 0.20;
+        this.dy *= 0.20;
+      }
     }
   }
 
@@ -64,7 +68,7 @@ function randomColor() {
 
 function createBalls() {
   const balls = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 30; i++) {
     const radius = 10 + Math.random() * 10;
     const x = radius + Math.random() * (window.innerWidth - 2 * radius);
     const y = radius + Math.random() * (window.innerHeight - 2 * radius);
@@ -86,7 +90,7 @@ function animate(canvas, ctx, balls) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const developerImage = document.getElementById("developer-image");
-  developerImage.style.backgroundImage = "url('stormcph.jpg')";
+  developerImage.style.backgroundImage = "url('https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/PfpTest1(1).jpg')";
 
   const canvas = document.getElementById("floating-balls");
   const ctx = canvas.getContext("2d");
@@ -112,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function animate(canvas, ctx, balls, cursor) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   balls.forEach(ball => {
-    ball.applyForce(cursor.x, cursor.y, 300);
+    ball.applyForce(cursor.x, cursor.y, 100);
     ball.update(ctx, canvas);
   });
   requestAnimationFrame(() => animate(canvas, ctx, balls, cursor));
