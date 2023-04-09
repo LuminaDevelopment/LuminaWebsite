@@ -68,7 +68,7 @@ function randomColor() {
 
 function createBalls() {
   const balls = [];
-  for (let i = 0; i < 150; i++) {
+  for (let i = 0; i < 500; i++) {
     const radius = 10 + Math.random() * 10;
     const x = radius + Math.random() * (window.innerWidth - 2 * radius);
     const y = radius + Math.random() * (window.innerHeight - 2 * radius);
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function animate(canvas, ctx, balls, cursor) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   balls.forEach(ball => {
-    ball.applyForce(cursor.x, cursor.y, 150);
+    ball.applyForce(cursor.x, cursor.y, 200);
     ball.update(ctx, canvas);
   });
   requestAnimationFrame(() => animate(canvas, ctx, balls, cursor));
