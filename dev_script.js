@@ -20,7 +20,6 @@ class Ball {
       this.dx += forceStrength * forceDirectionX;
       this.dy += forceStrength * forceDirectionY;
     } else {
-      // Apply friction when the balls are moving at high speeds
       const speed = Math.hypot(this.dx, this.dy);
       const maxSpeed = 8;
 
@@ -91,13 +90,13 @@ function animate(canvas, ctx, balls) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const stormcphImage = document.getElementById("stormcph-image");
-  stormcphImage.src = "https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/PfpTest1(1).jpg";
-
+  stormcphImage.src = "images/pfp.webp";
   const qweruImage = document.getElementById("qweru-image");
-  qweruImage.src = "https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/qwery.jpg";
-  
+  qweruImage.src = "images/qwery.jpg";
   const corruptionImage = document.getElementById("CorruptionHades-image");
-  corruptionImage.src = "https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/CorruptionHades.jpg";
+  corruptionImage.src = "images/CorruptionHades.jpg";
+  const trueKangzImage = document.getElementById("TrueKangz-image");
+  trueKangzImage.src = "images/TrueKangz.webp";
 
   const canvas = document.getElementById("floating-balls");
   const ctx = canvas.getContext("2d");
