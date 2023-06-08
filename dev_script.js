@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
   qweruImage.src = "images/qwery.jpg";
   const corruptionImage = document.getElementById("CorruptionHades-image");
   corruptionImage.src = "images/CorruptionHades.jpg";
-  const trueKangzImage = document.getElementById("TrueKangz-image");
-  trueKangzImage.src = "images/TrueKangz.webp";
+  //const trueKangzImage = document.getElementById("TrueKangz-image");
+  //trueKangzImage.src = "images/TrueKangz.webp";
 
   const canvas = document.getElementById("floating-balls");
   const ctx = canvas.getContext("2d");
