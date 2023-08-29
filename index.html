@@ -3,35 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina Client</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/favicon.png" type="image/png" sizes="32x32">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="scripts.js" defer></script>
-
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Lumina Client" />
-    <meta property="og:description" content="Lumina, The Best Ghost Client, Hacked Client And Utiliy Client" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/LuminaDevelopment/LuminaWebsite/main/src/icon.png" />
-    <meta property="og:url" content="https://luminaclient.com" />
-    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-right">
-        <a href="/dev_team.html" class="button dev">Dev</a>
-    </div>
-    <div class="container">
-        <div class="content">
-            <h1 class="title">Lumina</h1>
-            <p class="description">Introducing Lumina, best open-source 1.19 ghost client🔥👻</p>
-            <div class="buttons">
-                <a href="https://github.com/LuminaDevelopment/LuminaClient/releases" class="button direct-download" target="_blank">Direct Download</a>
-                <a href="https://github.com/LuminaDevelopment/LuminaClient" class="button source-code" target="_blank">Source Code</a>
-            </div>
-        </div>
-    </div>
-    <a href="https://discord.gg/VXNyTVXA8A" class="button discord" target="_blank">
-        <i class="fab fa-discord"></i>
-    </a>
+    <div class="title-image" aria-label="Title Image"></div>
+    <div class="comment-image" aria-label="Comment Image"></div>
+    <div class="horizontal-images">
+      <a class="button-container" onclick="showPremiumAlert(); event.stopPropagation();">
+          <button class="button-wrapper">
+              <div class="left-image" aria-label="Left Image"></div>
+          </button>
+      </a>
+      <a href="https://github.com/LuminaDevelopment/LuminaClient/releases/latest" target="_blank" rel="noopener noreferrer" aria-label="Link to GitHub repository">
+          <button class="button-wrapper">
+              <div class="right-image" aria-label="Right Image"></div>
+          </button>
+      </a>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="premiumModal">
+      Lumina Premium coming very soon, please be patient ❤️
+  </div>
+    <script>
+        function showPremiumAlert() {
+    var modal = document.getElementById('premiumModal');
+    var overlay = document.getElementById('overlay');
+
+    // Show the modal with slide-in animation
+    modal.style.display = 'block';
+    modal.classList.add('slideIn');
+
+    // Show the overlay
+    overlay.style.display = 'block';
+
+    // Remove the slideIn class after the animation completes
+    setTimeout(function() {
+        modal.classList.remove('slideIn');
+    }, 200);
+
+    // After 3 seconds, add slide-out animation and then hide the modal
+    setTimeout(function() {
+        modal.classList.add('slideOut');
+
+        setTimeout(function() {
+            modal.style.display = 'none';
+            modal.classList.remove('slideOut');
+            
+            // Hide the overlay
+            overlay.style.display = 'none';
+        }, 300);
+    }, 2000);
+}
+
+    </script>
 </body>
 </html>

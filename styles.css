@@ -1,0 +1,181 @@
+:root {
+  /* Extracted positioning settings */
+  --body-height: 100vh;
+  --title-image-margin-top: 0vw;
+  --title-image-margin-bottom: 3vw;
+  --comment-image-margin-top: -16.5vw;
+  --comment-image-margin-bottom: -3vw;
+  --horizontal-images-margin-top: -3vw;
+  --left-image-margin-right: 0.5vw;
+  --right-image-margin-left: 0.5vw;
+}
+
+body {
+  background-image: url("cover.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: var(--body-height);
+  margin: 0;
+}
+
+.title-image {
+  width: 33vw;
+  height: 23vw;
+  background-image: url("LuminaClient.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: var(--title-image-margin-top);
+  margin-bottom: var(--title-image-margin-bottom);
+  opacity: 100%;
+}
+
+.comment-image {
+  width: 30vw;
+  height: 14vw;
+  background-image: url("comment.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: var(--comment-image-margin-top);
+  margin-bottom: var(--comment-image-margin-bottom);
+  opacity: 80%;
+}
+
+.horizontal-images {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will vertically center the images */
+    margin-top: var(--horizontal-images-margin-top);
+}
+
+.horizontal-images a {
+    display: block;
+    width: 8.5vw;
+    height: 18vw;
+    position: relative; /* Set the anchor as the reference for the absolute positioning of the button */
+}
+
+.left-image,
+.right-image {
+  width: 8.5vw;
+  height: 3.3vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 100%;
+}
+
+.left-image {
+  background-image: url("left.png");
+  margin-right: var(--left-image-margin-right);
+}
+
+.right-image {
+  background-image: url("right.png");
+  margin-left: var(--right-image-margin-left);
+}
+
+.button-wrapper {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 5vw;
+  position: absolute; /* Make the button cover the entire anchor */
+  top: 0;
+  left: 0;
+}
+
+.button-wrapper:focus {
+  outline: none;
+}
+
+/* Your existing CSS content here... */
+
+.modal {
+  display: none; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(128, 128, 128, 0.7); 
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  backdrop-filter: blur(0px);
+  z-index: 1000; 
+  filter: blur(0px);
+  transition: transform 0.5s, opacity 0.5s, filter 0.5s;
+  font-family: 'Quicksand', sans-serif; /* Setting the font to Quicksand */
+  font-size: 24px; /* Adjust the size as desired */
+  
+}
+
+.slideIn {
+  animation: slideIn 0.5s forwards;
+}
+
+.slideOut {
+  animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translate(-50%, -75%);
+      opacity: 0;
+      filter: blur(5px);
+  }
+  100% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      filter: blur(0px);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      filter: blur(0px);
+  }
+  100% {
+      transform: translate(-50%, -25%);
+      opacity: 0;
+      filter: blur(5px);
+  }
+}
+
+/* Create an overlay with a transparent background */
+
+/* Modified overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3); /* Translucent black background */
+  backdrop-filter: blur(5px);
+  z-index: 998; /* Behind the modal */
+  display: none;
+}
+
+
+
+
+/* Modify the blur-background class */
+.blur-background {
+  filter: blur(5px);
+  pointer-events: none; 
+  transition: filter 0.5s; /* Add a transition for a smooth blur effect */
+}
+
