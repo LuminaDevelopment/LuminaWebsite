@@ -1,5 +1,4 @@
 :root {
-  /* Extracted positioning settings */
   --body-height: 100vh;
   --title-image-margin-top: 0vw;
   --title-image-margin-bottom: 3vw;
@@ -51,7 +50,7 @@ body {
 .horizontal-images {
     display: flex;
     justify-content: center;
-    align-items: center; /* This will vertically center the images */
+    align-items: center;
     margin-top: var(--horizontal-images-margin-top);
 }
 
@@ -59,7 +58,7 @@ body {
     display: block;
     width: 8.5vw;
     height: 18vw;
-    position: relative; /* Set the anchor as the reference for the absolute positioning of the button */
+    position: relative;
 }
 
 .left-image,
@@ -90,7 +89,7 @@ body {
   display: block;
   width: 100%;
   height: 5vw;
-  position: absolute; /* Make the button cover the entire anchor */
+  position: absolute;
   top: 0;
   left: 0;
 }
@@ -98,8 +97,6 @@ body {
 .button-wrapper:focus {
   outline: none;
 }
-
-/* Your existing CSS content here... */
 
 .modal {
   display: none; 
@@ -115,8 +112,8 @@ body {
   z-index: 1000; 
   filter: blur(0px);
   transition: transform 0.5s, opacity 0.5s, filter 0.5s;
-  font-family: 'Quicksand', sans-serif; /* Setting the font to Quicksand */
-  font-size: 24px; /* Adjust the size as desired */
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
   
 }
 
@@ -154,28 +151,21 @@ body {
   }
 }
 
-/* Create an overlay with a transparent background */
-
-/* Modified overlay styles */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3); /* Translucent black background */
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
-  z-index: 998; /* Behind the modal */
+  z-index: 998;
   display: none;
 }
 
-
-
-
-/* Modify the blur-background class */
 .blur-background {
   filter: blur(5px);
   pointer-events: none; 
-  transition: filter 0.5s; /* Add a transition for a smooth blur effect */
+  transition: filter 0.5s;
 }
 

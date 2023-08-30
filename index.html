@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <title>Lumina Client</title>
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
@@ -29,20 +32,14 @@
         function showPremiumAlert() {
     var modal = document.getElementById('premiumModal');
     var overlay = document.getElementById('overlay');
-
-    // Show the modal with slide-in animation
     modal.style.display = 'block';
     modal.classList.add('slideIn');
 
-    // Show the overlay
     overlay.style.display = 'block';
-
-    // Remove the slideIn class after the animation completes
     setTimeout(function() {
         modal.classList.remove('slideIn');
     }, 200);
 
-    // After 3 seconds, add slide-out animation and then hide the modal
     setTimeout(function() {
         modal.classList.add('slideOut');
 
@@ -50,7 +47,6 @@
             modal.style.display = 'none';
             modal.classList.remove('slideOut');
             
-            // Hide the overlay
             overlay.style.display = 'none';
         }, 300);
     }, 2000);
